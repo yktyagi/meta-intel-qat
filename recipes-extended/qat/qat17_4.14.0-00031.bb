@@ -23,6 +23,8 @@ SRC_URI = "https://downloadmirror.intel.com/30178/eng/QAT1.7.L.4.14.0-00031.tar.
            file://0009-crypto-qat-Silence-smp_processor_id-warning.patch \
            file://0011-qat17-use-namespace-CRYPTO_INTERNAL.patch \
            file://0001-usdm_drv-convert-mutex_lock-to-mutex_trylock-to-avio.patch \
+           file://qat-use-default_groups-in-kobj_type.patch \
+           file://qat-remove-the-deprecated-pci-dma-compat.h-API.patch \
           "
 
 do_configure[depends] += "virtual/kernel:do_shared_workdir"
