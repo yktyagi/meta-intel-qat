@@ -40,6 +40,8 @@ S = "${WORKDIR}/qat17"
 ICP_TOOLS = "accelcomp"
 SAMPLE_CODE_DIR = "${S}/quickassist/lookaside/access_layer/src/sample_code"
 QAT_HEADER_FILES = "/opt/intel/QAT/quickassist"
+HUGE_PAGE_DIR = "/dev/hugepages/qat"
+
 export INSTALL_MOD_PATH = "${D}"
 export ICP_ROOT = "${S}"
 export ICP_ENV_DIR = "${S}/quickassist/build_system/build_files/env_files"
@@ -114,7 +116,10 @@ do_install() {
   echo 'KERNEL=="qat_dev_processes" MODE="0660" GROUP="qat"' >> ${D}/etc/udev/rules.d/00-qat.rules
   echo 'KERNEL=="usdm_drv" MODE="0660" GROUP="qat"' >> ${D}/etc/udev/rules.d/00-qat.rules
   echo 'KERNEL=="uio*" MODE="0660" GROUP="qat"' >> ${D}/etc/udev/rules.d/00-qat.rules
-  echo 'KERNEL=="hugepages" MODE="0660" GROUP="qat"' >> ${D}/etc/udev/rules.d/00-qat.rules
+  echo 'ACTION=="add", DEVPATH=="/module/usdm_drv" SUBSYSTEM=="module" RUN+="/bin/mkdir ${HUGE_PAGE_DIR}"' >> ${D}/etc/udev/rules.d/00-qat.rules
+  echo 'ACTION=="add", DEVPATH=="/module/usdm_drv" SUBSYSTEM=="module" RUN+="/bin/chgrp qat ${HUGE_PAGE_DIR}"' >> ${D}/etc/udev/rules.d/00-qat.rules
+  echo 'ACTION=="add", DEVPATH=="/module/usdm_drv" SUBSYSTEM=="module" RUN+="/bin/chmod 0770 ${HUGE_PAGE_DIR}"' >> ${D}/etc/udev/rules.d/00-qat.rules
+  echo 'ACTION=="remove", DEVPATH=="/module/usdm_drv" SUBSYSTEM=="module" RUN+="/bin/rmdir ${HUGE_PAGE_DIR}"' >> ${D}/etc/udev/rules.d/00-qat.rules
 
   mkdir -p ${D}${base_libdir}
 
