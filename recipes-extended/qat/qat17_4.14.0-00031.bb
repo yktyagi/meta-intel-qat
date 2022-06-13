@@ -39,6 +39,7 @@ COMPATIBLE_HOST:libc-musl:class-target = 'null'
 S = "${WORKDIR}/qat17"
 ICP_TOOLS = "accelcomp"
 SAMPLE_CODE_DIR = "${S}/quickassist/lookaside/access_layer/src/sample_code"
+QAT_HEADER_FILES = "/opt/intel/QAT/quickassist"
 export INSTALL_MOD_PATH = "${D}"
 export ICP_ROOT = "${S}"
 export ICP_ENV_DIR = "${S}/quickassist/build_system/build_files/env_files"
@@ -108,9 +109,6 @@ do_install() {
   install -d ${D}${sbindir}
   install -d ${D}${sysconfdir}/conf_files
   install -d ${D}${prefix}/src/qat
-  install -d ${D}${includedir}
-  install -d ${D}${includedir}/dc
-  install -d ${D}${includedir}/lac
 
   echo 'KERNEL=="qat_adf_ctl" MODE="0660" GROUP="qat"' > ${D}/etc/udev/rules.d/00-qat.rules
   echo 'KERNEL=="qat_dev_processes" MODE="0660" GROUP="qat"' >> ${D}/etc/udev/rules.d/00-qat.rules
@@ -135,11 +133,17 @@ do_install() {
   install -m 0755 ${S}/quickassist/qat/fw/qat_d15xx.bin  ${D}${nonarch_base_libdir}/firmware
   install -m 0755 ${S}/quickassist/qat/fw/qat_d15xx_mmp.bin  ${D}${nonarch_base_libdir}/firmware
 
-  install -m 640 ${S}/quickassist/include/*.h  ${D}${includedir}
-  install -m 640 ${S}/quickassist/include/dc/*.h  ${D}${includedir}/dc/
-  install -m 640 ${S}/quickassist/include/lac/*.h  ${D}${includedir}/lac/
-  install -m 640 ${S}/quickassist/lookaside/access_layer/include/*.h  ${D}${includedir}
-  install -m 640 ${S}/quickassist/utilities/libusdm_drv/*.h  ${D}${includedir}
+  install -d ${D}${QAT_HEADER_FILES}/include
+  install -d ${D}${QAT_HEADER_FILES}/include/dc
+  install -d ${D}${QAT_HEADER_FILES}/include/lac
+  install -d ${D}${QAT_HEADER_FILES}/lookaside/access_layer/include
+  install -d ${D}${QAT_HEADER_FILES}/utilities/libusdm_drv
+
+  install -m 640 ${S}/quickassist/include/*.h  ${D}${QAT_HEADER_FILES}/include
+  install -m 640 ${S}/quickassist/include/dc/*.h  ${D}${QAT_HEADER_FILES}/include/dc
+  install -m 640 ${S}/quickassist/include/lac/*.h  ${D}${QAT_HEADER_FILES}/include/lac
+  install -m 640 ${S}/quickassist/lookaside/access_layer/include/*.h  ${D}${QAT_HEADER_FILES}/lookaside/access_layer/include
+  install -m 640 ${S}/quickassist/utilities/libusdm_drv/*.h  ${D}${QAT_HEADER_FILES}/utilities/libusdm_drv
 
   install -m 0755 ${S}/quickassist/lookaside/access_layer/src/sample_code/performance/compression/calgary  ${D}${nonarch_base_libdir}/firmware
   install -m 0755 ${S}/quickassist/lookaside/access_layer/src/sample_code/performance/compression/calgary32  ${D}${nonarch_base_libdir}/firmware
@@ -149,9 +153,11 @@ do_install() {
   cp ${DL_DIR}/QAT1.7.L.${PV}.tar.gz ${D}${prefix}/src/qat/
 }
 
+SYSROOT_DIRS += "/opt"
+
 PACKAGES += "${PN}-app"
 
-FILES:${PN}-dev = "${includedir}/ \
+FILES:${PN}-dev = "${QAT_HEADER_FILES}/ \
                    ${nonarch_base_libdir}/*.a \
                    "
 
