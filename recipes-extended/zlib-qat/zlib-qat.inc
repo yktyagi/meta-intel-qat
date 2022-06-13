@@ -28,14 +28,13 @@ ZLIB_VERSION = "1.2.8"
 
 S = "${WORKDIR}/zlib-${ZLIB_VERSION}"
 
-export ICP_ROOT = "${S}"
+export ICP_ROOT = "${STAGING_DIR_TARGET}/opt/intel/QAT"
 export ZLIB_ROOT = "${S}"
 export KERNEL_SOURCE_ROOT = "${STAGING_KERNEL_DIR}"
 export KERNEL_BUILDDIR = "${STAGING_KERNEL_BUILDDIR}"
-export ICP_LAC_API_DIR = "${STAGING_DIR_TARGET}${includedir}/lac"
-export ICP_DC_API_DIR = "${STAGING_DIR_TARGET}${includedir}/dc"
 export ICP_BUILD_OUTPUT = "${STAGING_DIR_TARGET}"
 
+CFLAGS += " -I${ICP_ROOT}/quickassist/utilities/libusdm_drv"
 EXTRA_OEMAKE = "-e MAKEFLAGS="
 TARGET_CC_ARCH += "${LDFLAGS}"
 
