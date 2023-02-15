@@ -177,3 +177,7 @@ FILES:${PN}-dbg += "${sysconfdir}/init.d/.debug/ \
 FILES:${PN}-app += "${bindir}/* \
                     ${prefix}/qat \
                     "
+
+# yasm encodes path to the input file and doesn't provide any option to workaround it.
+INSANE_SKIP:${PN}-staticdev += "buildpaths"
+INSANE_SKIP:${PN}-dbg += "buildpaths"
