@@ -12,21 +12,20 @@ PROVIDES += "virtual/qat"
 
 TARGET_CC_ARCH += "${LDFLAGS}"
 
-SRC_URI = "https://downloadmirror.intel.com/743650/QAT.L.4.19.0-00005.tar.gz;subdir=qat17 \
+SRC_URI = "https://downloadmirror.intel.com/761891/QAT.L.4.20.0-00001.tar.gz;subdir=qat17 \
            file://0001-qat-fix-for-cross-compilation-issue.patch \
            file://0002-qat-remove-local-path-from-makefile.patch \
            file://0003-qat-override-CC-LD-AR-only-when-it-is-not-define.patch \
            file://0004-update-KDIR-for-cross-compilation.patch \
            file://0005-Added-include-dir-path.patch \
            file://0006-qat-add-install-target-and-add-folder.patch \
-           file://0009-crypto-qat-Silence-smp_processor_id-warning.patch \
            file://0001-usdm_drv-convert-mutex_lock-to-mutex_trylock-to-avio.patch \
            file://qat-remove-the-deprecated-pci-dma-compat.h-API.patch \
           "
 
 do_configure[depends] += "virtual/kernel:do_shared_workdir"
 
-SRC_URI[sha256sum] = "0eeb6c56f88617ada642d78f805a1a4b5b343a2fa62f34e72726537149a7e27e"
+SRC_URI[sha256sum] = "90ca71c551cbb963b261f528616f2be5085f23a87578f2325623cfb6511a32f7"
 
 COMPATIBLE_MACHINE = "null"
 COMPATIBLE_HOST:x86-x32 = 'null'
