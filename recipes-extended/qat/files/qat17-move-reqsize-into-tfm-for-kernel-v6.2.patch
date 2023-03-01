@@ -1,0 +1,65 @@
+From cee000ba295057ea8b5d93531b2896934674a7f3 Mon Sep 17 00:00:00 2001
+From: Yongxin Liu <yongxin.liu@windriver.com>
+Date: Wed, 1 Mar 2023 01:40:00 +0000
+Subject: [PATCH] qat17: move reqsize into tfm for kernel v6.2
+
+In mainline kernel commits 3e71e5b0efcc ("crypto: akcipher - Move reqsize
+into tfm") and 4d2b225a67e6 (crypto: kpp - Move reqsize into tfm),
+reqsize was moved from struct akcipher_alg and kpp_alg to tfm.
+
+Upstream-Status: Inappropriate [Code released in tarball form only]
+
+Signed-off-by: Yongxin Liu <yongxin.liu@windriver.com>
+---
+ .../drivers/crypto/qat/qat_common/qat_asym_algs.c    | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+
+diff --git a/quickassist/qat/drivers/crypto/qat/qat_common/qat_asym_algs.c b/quickassist/qat/drivers/crypto/qat/qat_common/qat_asym_algs.c
+index ec410cc..359f7b1 100644
+--- a/quickassist/qat/drivers/crypto/qat/qat_common/qat_asym_algs.c
++++ b/quickassist/qat/drivers/crypto/qat/qat_common/qat_asym_algs.c
+@@ -504,6 +504,10 @@ static int qat_dh_init_tfm(struct crypto_kpp *tfm)
+ 	if (!inst)
+ 		return -EINVAL;
+ 
++#if (LINUX_VERSION_CODE >= KERNEL_VERSION(6,2,0))
++	kpp_set_reqsize(tfm, sizeof(struct qat_asym_request) + 64);
++#endif
++
+ 	ctx->p_size = 0;
+ 	ctx->g2 = false;
+ 	ctx->inst = inst;
+@@ -1252,6 +1256,10 @@ static int qat_rsa_init_tfm(struct crypto_akcipher *tfm)
+ 	if (!inst)
+ 		return -EINVAL;
+ 
++#if (LINUX_VERSION_CODE >= KERNEL_VERSION(6,2,0))
++	akcipher_set_reqsize(tfm, sizeof(struct qat_asym_request) + 64);
++#endif
++
+ 	ctx->key_sz = 0;
+ 	ctx->inst = inst;
+ 	return 0;
+@@ -1276,7 +1284,9 @@ static struct akcipher_alg rsa = {
+ 	.max_size = qat_rsa_max_size,
+ 	.init = qat_rsa_init_tfm,
+ 	.exit = qat_rsa_exit_tfm,
++#if (LINUX_VERSION_CODE < KERNEL_VERSION(6,2,0))
+ 	.reqsize = sizeof(struct qat_asym_request) + 64,
++#endif
+ 	.base = {
+ 		.cra_name = "rsa",
+ 		.cra_driver_name = "qat-rsa",
+@@ -1294,7 +1304,9 @@ static struct kpp_alg dh = {
+ 	.max_size = qat_dh_max_size,
+ 	.init = qat_dh_init_tfm,
+ 	.exit = qat_dh_exit_tfm,
++#if (LINUX_VERSION_CODE < KERNEL_VERSION(6,2,0))
+ 	.reqsize = sizeof(struct qat_asym_request) + 64,
++#endif
+ 	.base = {
+ 		.cra_name = "dh",
+ 		.cra_driver_name = "qat-dh",
+-- 
+2.39.1
+

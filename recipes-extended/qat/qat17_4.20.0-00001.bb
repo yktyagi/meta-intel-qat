@@ -21,6 +21,8 @@ SRC_URI = "https://downloadmirror.intel.com/761891/QAT.L.4.20.0-00001.tar.gz;sub
            file://0006-qat-add-install-target-and-add-folder.patch \
            file://0001-usdm_drv-convert-mutex_lock-to-mutex_trylock-to-avio.patch \
            file://qat-remove-the-deprecated-pci-dma-compat.h-API.patch \
+           file://qat17-move-reqsize-into-tfm-for-kernel-v6.2.patch \
+           file://qat17-change-PMD_PAGE_SIZE-to-PMD_SIZE-for-kernel-v6.patch \
           "
 
 do_configure[depends] += "virtual/kernel:do_shared_workdir"

@@ -1,0 +1,35 @@
+From 5c51a64f97e1e149df206fed00f5414f73e1e07a Mon Sep 17 00:00:00 2001
+From: Yongxin Liu <yongxin.liu@windriver.com>
+Date: Wed, 1 Mar 2023 01:39:47 +0000
+Subject: [PATCH] qat17: change PMD_PAGE_SIZE to PMD_SIZE for kernel v6.2
+
+In kernel commit 82328227db8f ("x86/mm: Remove P*D_PAGE_MASK and
+P*D_PAGE_SIZE macros"), P*D_PAGE_MASK and P*D_PAGE_SIZE were removed.
+P*D_MASK and P*D_SIZE are used instead.
+
+Upstream-Status: Inappropriate [Code released in tarball form only]
+
+Signed-off-by: Yongxin Liu <yongxin.liu@windriver.com>
+---
+ .../utilities/libusdm_drv/linux/kernel_space/qae_mem_drv.c    | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/quickassist/utilities/libusdm_drv/linux/kernel_space/qae_mem_drv.c b/quickassist/utilities/libusdm_drv/linux/kernel_space/qae_mem_drv.c
+index 8e8d76e..ae96d3f 100644
+--- a/quickassist/utilities/libusdm_drv/linux/kernel_space/qae_mem_drv.c
++++ b/quickassist/utilities/libusdm_drv/linux/kernel_space/qae_mem_drv.c
+@@ -848,7 +848,11 @@ dev_get_user_page(struct file *fp, uint32_t cmd, unsigned long arg)
+     {
+        if (PageHuge(page))
+        {
++#if (LINUX_VERSION_CODE >= KERNEL_VERSION(6,2,0))
++           if (user_mem_info.size != PMD_SIZE)
++#else
+            if (user_mem_info.size != PMD_PAGE_SIZE)
++#endif
+            {
+                mm_err("%s:%d dev_get_user_page: user_mem_info.size is not "
+                       "equal to hugepage_size, ret=%d\n",
+-- 
+2.39.1
+
