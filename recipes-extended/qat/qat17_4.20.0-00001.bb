@@ -182,3 +182,4 @@ FILES:${PN}-app += "${bindir}/* \
 # yasm encodes path to the input file and doesn't provide any option to workaround it.
 INSANE_SKIP:${PN}-staticdev += "buildpaths"
 INSANE_SKIP:${PN}-dbg += "buildpaths"
+INSANE_SKIP:kernel-module-intel-qat${KERNEL_MODULE_PACKAGE_SUFFIX}  += "buildpaths"
