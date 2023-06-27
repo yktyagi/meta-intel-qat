@@ -135,6 +135,14 @@ do_install() {
   install -m 0755 ${S}/quickassist/qat/fw/qat_d15xx.bin  ${D}${nonarch_base_libdir}/firmware
   install -m 0755 ${S}/quickassist/qat/fw/qat_d15xx_mmp.bin  ${D}${nonarch_base_libdir}/firmware
 
+  # ICE-D LCC
+  install -m 0755 ${S}/quickassist/qat/fw/qat_200xx.bin  ${D}${nonarch_base_libdir}/firmware
+  install -m 0755 ${S}/quickassist/qat/fw/qat_200xx_mmp.bin  ${D}${nonarch_base_libdir}/firmware
+
+  # ICE-D HCC
+  install -m 0755 ${S}/quickassist/qat/fw/qat_c4xxx.bin ${D}${nonarch_base_libdir}/firmware
+  install -m 0755 ${S}/quickassist/qat/fw/qat_c4xxx_mmp.bin ${D}${nonarch_base_libdir}/firmware
+
   install -d ${D}${QAT_HEADER_FILES}/include
   install -d ${D}${QAT_HEADER_FILES}/include/dc
   install -d ${D}${QAT_HEADER_FILES}/include/lac
