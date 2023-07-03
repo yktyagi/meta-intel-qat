@@ -5,14 +5,14 @@ HOMEPAGE = "https://www.intel.com/content/www/us/en/developer/topic-technology/o
 LICENSE = "BSD-3-Clause & GPL-2.0-only"
 LIC_FILES_CHKSUM = "\
                     file://LICENSE.GPL;md5=751419260aa954499f7abaabaa882bbe \
-                    file://LICENSE.BSD;md5=4a6a5cd99f6064d61adad8c6c0bd080f \
+                    file://LICENSE.BSD;md5=7e3723742f05cc28b730c136742b3b80 \
                     "
 DEPENDS += "boost udev zlib openssl yasm-native"
 PROVIDES += "virtual/qat"
 
 TARGET_CC_ARCH += "${LDFLAGS}"
 
-SRC_URI = "https://downloadmirror.intel.com/761891/QAT.L.4.20.0-00001.tar.gz;subdir=qat17 \
+SRC_URI = "https://downloadmirror.intel.com/780675/QAT.L.4.22.0-00001.tar.gz;subdir=qat17 \
            file://0001-qat-fix-for-cross-compilation-issue.patch \
            file://0002-qat-remove-local-path-from-makefile.patch \
            file://0003-qat-override-CC-LD-AR-only-when-it-is-not-define.patch \
@@ -21,13 +21,11 @@ SRC_URI = "https://downloadmirror.intel.com/761891/QAT.L.4.20.0-00001.tar.gz;sub
            file://0006-qat-add-install-target-and-add-folder.patch \
            file://0001-usdm_drv-convert-mutex_lock-to-mutex_trylock-to-avio.patch \
            file://qat-remove-the-deprecated-pci-dma-compat.h-API.patch \
-           file://qat17-move-reqsize-into-tfm-for-kernel-v6.2.patch \
-           file://qat17-change-PMD_PAGE_SIZE-to-PMD_SIZE-for-kernel-v6.patch \
           "
 
 do_configure[depends] += "virtual/kernel:do_shared_workdir"
 
-SRC_URI[sha256sum] = "90ca71c551cbb963b261f528616f2be5085f23a87578f2325623cfb6511a32f7"
+SRC_URI[sha256sum] = "b213f9c4c728405e8d4039633ec21012d5e2c8f39ba67a629a9530cd1b261238"
 
 COMPATIBLE_MACHINE = "null"
 COMPATIBLE_HOST:x86-x32 = 'null'
