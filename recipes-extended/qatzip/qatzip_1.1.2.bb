@@ -5,18 +5,16 @@ HOMEPAGE = "https://github.com/intel/QATzip"
 
 LICENSE = "BSD-3-Clause & GPL-2.0-only"
 LIC_FILES_CHKSUM = "\
-                   file://LICENSE;md5=e499c81a76f6663c808889cc77414866 \
+                   file://LICENSE;md5=f7b7ac1ea80d2f68f359a2641b14df09 \
                    file://config_file/LICENSE.GPL;md5=751419260aa954499f7abaabaa882bbe \
 "
 SRC_URI = "git://github.com/intel/QATzip;protocol=https;branch=master \
            file://remove-rpath.patch \
 "
 
-SRCREV = "a30e179b2d495924f0a52b8cf113fa00ffe5df34"
+SRCREV = "fdee557b5bb640827758f121102dcf3583292b7a"
 
 DEPENDS += "qat17 util-linux-native lz4 "
-
-PV = "1.0.9+git${SRCPV}"
 
 export ICP_ROOT = "${STAGING_DIR_TARGET}/opt/intel/QAT"
 export QZ_ROOT = "${S}"
