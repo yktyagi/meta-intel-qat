@@ -3,7 +3,7 @@ From: Rahul Kumar Gupta <rahul.kumarxx.gupta@intel.com>
 Date: Mon, 12 Apr 2021 08:40:47 +0800
 Subject: [PATCH 03/11] qat: override CC LD AR only when it is not define
 
-Upstream-Status: Inappropriate [Configuration]
+Upstream-Status: Pending
 
 To make sure that compiler linker and archiver will override only when
 it is not defined by the environment.
