@@ -120,27 +120,27 @@ do_install() {
   mkdir -p ${D}${base_libdir}
 
   install -D -m 0755 ${S}/quickassist/lookaside/access_layer/src/build/linux_2.6/user_space/libqat_s.so ${D}${base_libdir}
-  install -D -m 0755 ${S}/quickassist/lookaside/access_layer/src/build/linux_2.6/user_space/libqat.a ${D}${base_libdir}
+  install -D -m 0644 ${S}/quickassist/lookaside/access_layer/src/build/linux_2.6/user_space/libqat.a ${D}${base_libdir}
   install -D -m 0755 ${S}/quickassist/utilities/osal/src/build/linux_2.6/user_space/libosal_s.so ${D}${base_libdir}
-  install -D -m 0755 ${S}/quickassist/utilities/osal/src/build/linux_2.6/user_space/libosal.a ${D}${base_libdir}
-  install -D -m 0755 ${S}/quickassist/lookaside/access_layer/src/qat_direct/src/libadf_user.a ${D}${base_libdir}/libadf.a
+  install -D -m 0644 ${S}/quickassist/utilities/osal/src/build/linux_2.6/user_space/libosal.a ${D}${base_libdir}
+  install -D -m 0644 ${S}/quickassist/lookaside/access_layer/src/qat_direct/src/libadf_user.a ${D}${base_libdir}/libadf.a
   install -D -m 0755 ${S}/quickassist/utilities/libusdm_drv/libusdm_drv_s.so ${D}${base_libdir}
-  install -D -m 0755 ${S}/quickassist/utilities/libusdm_drv/libusdm_drv.a ${D}${base_libdir}
+  install -D -m 0644 ${S}/quickassist/utilities/libusdm_drv/libusdm_drv.a ${D}${base_libdir}
   install -D -m 0750 ${S}/quickassist/utilities/adf_ctl/adf_ctl ${D}${sbindir}
 
-  install -D -m 640 ${S}/quickassist/utilities/adf_ctl/conf_files/*.conf  ${D}${sysconfdir}/conf_files
-  install -D -m 640 ${S}/quickassist/utilities/adf_ctl/conf_files/*.conf.vm  ${D}${sysconfdir}/conf_files
+  install -D -m 0644 ${S}/quickassist/utilities/adf_ctl/conf_files/*.conf  ${D}${sysconfdir}/conf_files
+  install -D -m 0644 ${S}/quickassist/utilities/adf_ctl/conf_files/*.conf.vm  ${D}${sysconfdir}/conf_files
 
-  install -m 0755 ${S}/quickassist/qat/fw/qat_d15xx.bin  ${D}${nonarch_base_libdir}/firmware
-  install -m 0755 ${S}/quickassist/qat/fw/qat_d15xx_mmp.bin  ${D}${nonarch_base_libdir}/firmware
+  install -m 0644 ${S}/quickassist/qat/fw/qat_d15xx.bin  ${D}${nonarch_base_libdir}/firmware
+  install -m 0644 ${S}/quickassist/qat/fw/qat_d15xx_mmp.bin  ${D}${nonarch_base_libdir}/firmware
 
   # ICE-D LCC
-  install -m 0755 ${S}/quickassist/qat/fw/qat_200xx.bin  ${D}${nonarch_base_libdir}/firmware
-  install -m 0755 ${S}/quickassist/qat/fw/qat_200xx_mmp.bin  ${D}${nonarch_base_libdir}/firmware
+  install -m 0644 ${S}/quickassist/qat/fw/qat_200xx.bin  ${D}${nonarch_base_libdir}/firmware
+  install -m 0644 ${S}/quickassist/qat/fw/qat_200xx_mmp.bin  ${D}${nonarch_base_libdir}/firmware
 
   # ICE-D HCC
-  install -m 0755 ${S}/quickassist/qat/fw/qat_c4xxx.bin ${D}${nonarch_base_libdir}/firmware
-  install -m 0755 ${S}/quickassist/qat/fw/qat_c4xxx_mmp.bin ${D}${nonarch_base_libdir}/firmware
+  install -m 0644 ${S}/quickassist/qat/fw/qat_c4xxx.bin ${D}${nonarch_base_libdir}/firmware
+  install -m 0644 ${S}/quickassist/qat/fw/qat_c4xxx_mmp.bin ${D}${nonarch_base_libdir}/firmware
 
   install -d ${D}${QAT_HEADER_FILES}/include
   install -d ${D}${QAT_HEADER_FILES}/include/dc
@@ -148,15 +148,15 @@ do_install() {
   install -d ${D}${QAT_HEADER_FILES}/lookaside/access_layer/include
   install -d ${D}${QAT_HEADER_FILES}/utilities/libusdm_drv
 
-  install -m 640 ${S}/quickassist/include/*.h  ${D}${QAT_HEADER_FILES}/include
-  install -m 640 ${S}/quickassist/include/dc/*.h  ${D}${QAT_HEADER_FILES}/include/dc
-  install -m 640 ${S}/quickassist/include/lac/*.h  ${D}${QAT_HEADER_FILES}/include/lac
-  install -m 640 ${S}/quickassist/lookaside/access_layer/include/*.h  ${D}${QAT_HEADER_FILES}/lookaside/access_layer/include
-  install -m 640 ${S}/quickassist/utilities/libusdm_drv/*.h  ${D}${QAT_HEADER_FILES}/utilities/libusdm_drv
+  install -m 0644 ${S}/quickassist/include/*.h  ${D}${QAT_HEADER_FILES}/include
+  install -m 0644 ${S}/quickassist/include/dc/*.h  ${D}${QAT_HEADER_FILES}/include/dc
+  install -m 0644 ${S}/quickassist/include/lac/*.h  ${D}${QAT_HEADER_FILES}/include/lac
+  install -m 0644 ${S}/quickassist/lookaside/access_layer/include/*.h  ${D}${QAT_HEADER_FILES}/lookaside/access_layer/include
+  install -m 0644 ${S}/quickassist/utilities/libusdm_drv/*.h  ${D}${QAT_HEADER_FILES}/utilities/libusdm_drv
 
-  install -m 0755 ${S}/quickassist/lookaside/access_layer/src/sample_code/performance/compression/calgary  ${D}${nonarch_base_libdir}/firmware
-  install -m 0755 ${S}/quickassist/lookaside/access_layer/src/sample_code/performance/compression/calgary32  ${D}${nonarch_base_libdir}/firmware
-  install -m 0755 ${S}/quickassist/lookaside/access_layer/src/sample_code/performance/compression/canterbury  ${D}${nonarch_base_libdir}/firmware
+  install -m 0644 ${S}/quickassist/lookaside/access_layer/src/sample_code/performance/compression/calgary  ${D}${nonarch_base_libdir}/firmware
+  install -m 0644 ${S}/quickassist/lookaside/access_layer/src/sample_code/performance/compression/calgary32  ${D}${nonarch_base_libdir}/firmware
+  install -m 0644 ${S}/quickassist/lookaside/access_layer/src/sample_code/performance/compression/canterbury  ${D}${nonarch_base_libdir}/firmware
 
   #install qat source
   cp ${DL_DIR}/QAT.L.${PV}.tar.gz ${D}${prefix}/src/qat/
