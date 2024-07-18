@@ -132,6 +132,12 @@ do_install() {
   install -D -m 0644 ${S}/quickassist/utilities/adf_ctl/conf_files/*.conf  ${D}${sysconfdir}/conf_files
   install -D -m 0644 ${S}/quickassist/utilities/adf_ctl/conf_files/*.conf.vm  ${D}${sysconfdir}/conf_files
 
+  if ${@bb.utils.contains('DISTRO_FEATURES','usrmerge','true','false',d)}; then
+      mkdir -p ${D}${nonarch_base_libdir}/firmware
+      mv ${D}/lib/modules ${D}${nonarch_base_libdir}
+      rm -rf ${D}/lib
+  fi
+
   install -m 0644 ${S}/quickassist/qat/fw/qat_d15xx.bin  ${D}${nonarch_base_libdir}/firmware
   install -m 0644 ${S}/quickassist/qat/fw/qat_d15xx_mmp.bin  ${D}${nonarch_base_libdir}/firmware
 
