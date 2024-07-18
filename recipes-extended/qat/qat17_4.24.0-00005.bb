@@ -129,8 +129,7 @@ do_install() {
   install -D -m 0644 ${S}/quickassist/utilities/libusdm_drv/libusdm_drv.a ${D}${base_libdir}
   install -D -m 0750 ${S}/quickassist/utilities/adf_ctl/adf_ctl ${D}${sbindir}
 
-  install -D -m 0644 ${S}/quickassist/utilities/adf_ctl/conf_files/*.conf  ${D}${sysconfdir}/conf_files
-  install -D -m 0644 ${S}/quickassist/utilities/adf_ctl/conf_files/*.conf.vm  ${D}${sysconfdir}/conf_files
+  install -D -m 0644 ${S}/quickassist/utilities/adf_ctl/conf_files/* ${D}${sysconfdir}/conf_files
 
   if ${@bb.utils.contains('DISTRO_FEATURES','usrmerge','true','false',d)}; then
       mkdir -p ${D}${nonarch_base_libdir}/firmware
