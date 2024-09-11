@@ -4,6 +4,7 @@ HOMEPAGE = "https://github.com/intel/qatlib"
 LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=64dc5eee9d532c8a1633bb63ed0d1aac"
 
+COMPATIBLE_MACHINE = 'null'
 COMPATIBLE_HOST:x86-x32 = 'null'
 COMPATIBLE_HOST:libc-musl:class-target = 'null'
 
