@@ -9,6 +9,7 @@ LIC_FILES_CHKSUM = "\
                     "
 DEPENDS += "boost udev zlib openssl nasm-native"
 PROVIDES += "virtual/qat"
+RPROVIDES:${PN} += "qat"
 
 TARGET_CC_ARCH += "${LDFLAGS}"
 
