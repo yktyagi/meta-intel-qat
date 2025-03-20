@@ -78,10 +78,10 @@ Signed-off-by: Liwei Song <liwei.song@windriver.com>
  .../utilities/libusdm_drv/linux/kernel_space/qae_mem_drv.c  | 6 +++++-
  1 file changed, 5 insertions(+), 1 deletion(-)
 
-diff --git a/quickassist/utilities/libusdm_drv/linux/kernel_space/qae_mem_drv.c b/quickassist/utilities/libusdm_drv/linux/kernel_space/qae_mem_drv.c
-index d73cb0d..06e5d15 100644
---- a/quickassist/utilities/libusdm_drv/linux/kernel_space/qae_mem_drv.c
-+++ b/quickassist/utilities/libusdm_drv/linux/kernel_space/qae_mem_drv.c
+Index: qat17/quickassist/utilities/libusdm_drv/linux/kernel_space/qae_mem_drv.c
+===================================================================
+--- qat17.orig/quickassist/utilities/libusdm_drv/linux/kernel_space/qae_mem_drv.c
++++ qat17/quickassist/utilities/libusdm_drv/linux/kernel_space/qae_mem_drv.c
 @@ -87,6 +87,7 @@
  #include <linux/uaccess.h>
  #include <linux/version.h>
@@ -90,7 +90,7 @@ index d73cb0d..06e5d15 100644
  
  #include "qae_mem_utils.h"
  
-@@ -1049,7 +1050,10 @@ mem_mmap(struct file *fp, struct vm_area_struct *vma)
+@@ -1064,7 +1065,10 @@ mem_mmap(struct file *fp, struct vm_area
      uint64_t pages = size >> PAGE_SHIFT;
      id = vma->vm_pgoff << PAGE_SHIFT;
  

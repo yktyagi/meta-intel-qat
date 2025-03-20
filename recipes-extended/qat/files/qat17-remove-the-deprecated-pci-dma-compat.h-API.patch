@@ -25,11 +25,11 @@ Signed-off-by: Yongxin Liu <yongxin.liu@windriver.com>
  .../qat/drivers/crypto/qat/qat_dh895xccvf/adf_drv.c       | 8 ++++----
  12 files changed, 48 insertions(+), 48 deletions(-)
 
-diff --git a/quickassist/qat/drivers/crypto/qat/qat_200xx/adf_drv.c b/quickassist/qat/drivers/crypto/qat/qat_200xx/adf_drv.c
-index 6c8cf02..e1a600f 100644
---- a/quickassist/qat/drivers/crypto/qat/qat_200xx/adf_drv.c
-+++ b/quickassist/qat/drivers/crypto/qat/qat_200xx/adf_drv.c
-@@ -187,17 +187,17 @@ static int adf_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
+Index: qat17/quickassist/qat/drivers/crypto/qat/qat_200xx/adf_drv.c
+===================================================================
+--- qat17.orig/quickassist/qat/drivers/crypto/qat/qat_200xx/adf_drv.c
++++ qat17/quickassist/qat/drivers/crypto/qat/qat_200xx/adf_drv.c
+@@ -181,17 +181,17 @@ static int adf_probe(struct pci_dev *pde
  	}
  
  	/* set dma identifier */
@@ -51,11 +51,11 @@ index 6c8cf02..e1a600f 100644
  	}
  
  	if (pci_request_regions(pdev, ADF_200XX_DEVICE_NAME)) {
-diff --git a/quickassist/qat/drivers/crypto/qat/qat_200xxvf/adf_drv.c b/quickassist/qat/drivers/crypto/qat/qat_200xxvf/adf_drv.c
-index 4bef020..7d1c2c3 100644
---- a/quickassist/qat/drivers/crypto/qat/qat_200xxvf/adf_drv.c
-+++ b/quickassist/qat/drivers/crypto/qat/qat_200xxvf/adf_drv.c
-@@ -158,17 +158,17 @@ static int adf_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
+Index: qat17/quickassist/qat/drivers/crypto/qat/qat_200xxvf/adf_drv.c
+===================================================================
+--- qat17.orig/quickassist/qat/drivers/crypto/qat/qat_200xxvf/adf_drv.c
++++ qat17/quickassist/qat/drivers/crypto/qat/qat_200xxvf/adf_drv.c
+@@ -153,17 +153,17 @@ static int adf_probe(struct pci_dev *pde
  	}
  
  	/* set dma identifier */
@@ -77,11 +77,11 @@ index 4bef020..7d1c2c3 100644
  	}
  
  	if (pci_request_regions(pdev, ADF_200XXVF_DEVICE_NAME)) {
-diff --git a/quickassist/qat/drivers/crypto/qat/qat_c3xxx/adf_drv.c b/quickassist/qat/drivers/crypto/qat/qat_c3xxx/adf_drv.c
-index 36a0127..1ce14a4 100644
---- a/quickassist/qat/drivers/crypto/qat/qat_c3xxx/adf_drv.c
-+++ b/quickassist/qat/drivers/crypto/qat/qat_c3xxx/adf_drv.c
-@@ -190,17 +190,17 @@ static int adf_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
+Index: qat17/quickassist/qat/drivers/crypto/qat/qat_c3xxx/adf_drv.c
+===================================================================
+--- qat17.orig/quickassist/qat/drivers/crypto/qat/qat_c3xxx/adf_drv.c
++++ qat17/quickassist/qat/drivers/crypto/qat/qat_c3xxx/adf_drv.c
+@@ -184,17 +184,17 @@ static int adf_probe(struct pci_dev *pde
  	}
  
  	/* set dma identifier */
@@ -103,11 +103,11 @@ index 36a0127..1ce14a4 100644
  	}
  
  	if (pci_request_regions(pdev, ADF_C3XXX_DEVICE_NAME)) {
-diff --git a/quickassist/qat/drivers/crypto/qat/qat_c3xxxvf/adf_drv.c b/quickassist/qat/drivers/crypto/qat/qat_c3xxxvf/adf_drv.c
-index dd7062f..313f8cd 100644
---- a/quickassist/qat/drivers/crypto/qat/qat_c3xxxvf/adf_drv.c
-+++ b/quickassist/qat/drivers/crypto/qat/qat_c3xxxvf/adf_drv.c
-@@ -158,17 +158,17 @@ static int adf_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
+Index: qat17/quickassist/qat/drivers/crypto/qat/qat_c3xxxvf/adf_drv.c
+===================================================================
+--- qat17.orig/quickassist/qat/drivers/crypto/qat/qat_c3xxxvf/adf_drv.c
++++ qat17/quickassist/qat/drivers/crypto/qat/qat_c3xxxvf/adf_drv.c
+@@ -153,17 +153,17 @@ static int adf_probe(struct pci_dev *pde
  	}
  
  	/* set dma identifier */
@@ -129,11 +129,11 @@ index dd7062f..313f8cd 100644
  	}
  
  	if (pci_request_regions(pdev, ADF_C3XXXVF_DEVICE_NAME)) {
-diff --git a/quickassist/qat/drivers/crypto/qat/qat_c4xxx/adf_drv.c b/quickassist/qat/drivers/crypto/qat/qat_c4xxx/adf_drv.c
-index 5398dcf..c335363 100644
---- a/quickassist/qat/drivers/crypto/qat/qat_c4xxx/adf_drv.c
-+++ b/quickassist/qat/drivers/crypto/qat/qat_c4xxx/adf_drv.c
-@@ -178,17 +178,17 @@ static int adf_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
+Index: qat17/quickassist/qat/drivers/crypto/qat/qat_c4xxx/adf_drv.c
+===================================================================
+--- qat17.orig/quickassist/qat/drivers/crypto/qat/qat_c4xxx/adf_drv.c
++++ qat17/quickassist/qat/drivers/crypto/qat/qat_c4xxx/adf_drv.c
+@@ -171,17 +171,17 @@ static int adf_probe(struct pci_dev *pde
  	}
  
  	/* set dma identifier */
@@ -155,11 +155,11 @@ index 5398dcf..c335363 100644
  	}
  
  	if (pci_request_regions(pdev, ADF_C4XXX_DEVICE_NAME)) {
-diff --git a/quickassist/qat/drivers/crypto/qat/qat_c4xxxvf/adf_drv.c b/quickassist/qat/drivers/crypto/qat/qat_c4xxxvf/adf_drv.c
-index b6b8a13..05c1ba7 100644
---- a/quickassist/qat/drivers/crypto/qat/qat_c4xxxvf/adf_drv.c
-+++ b/quickassist/qat/drivers/crypto/qat/qat_c4xxxvf/adf_drv.c
-@@ -157,17 +157,17 @@ static int adf_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
+Index: qat17/quickassist/qat/drivers/crypto/qat/qat_c4xxxvf/adf_drv.c
+===================================================================
+--- qat17.orig/quickassist/qat/drivers/crypto/qat/qat_c4xxxvf/adf_drv.c
++++ qat17/quickassist/qat/drivers/crypto/qat/qat_c4xxxvf/adf_drv.c
+@@ -152,17 +152,17 @@ static int adf_probe(struct pci_dev *pde
  	}
  
  	/* set dma identifier */
@@ -181,11 +181,11 @@ index b6b8a13..05c1ba7 100644
  	}
  
  	if (pci_request_regions(pdev, ADF_C4XXXVF_DEVICE_NAME)) {
-diff --git a/quickassist/qat/drivers/crypto/qat/qat_c62x/adf_drv.c b/quickassist/qat/drivers/crypto/qat/qat_c62x/adf_drv.c
-index b401f4b..783d059 100644
---- a/quickassist/qat/drivers/crypto/qat/qat_c62x/adf_drv.c
-+++ b/quickassist/qat/drivers/crypto/qat/qat_c62x/adf_drv.c
-@@ -181,17 +181,17 @@ static int adf_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
+Index: qat17/quickassist/qat/drivers/crypto/qat/qat_c62x/adf_drv.c
+===================================================================
+--- qat17.orig/quickassist/qat/drivers/crypto/qat/qat_c62x/adf_drv.c
++++ qat17/quickassist/qat/drivers/crypto/qat/qat_c62x/adf_drv.c
+@@ -174,17 +174,17 @@ static int adf_probe(struct pci_dev *pde
  	}
  
  	/* set dma identifier */
@@ -207,11 +207,11 @@ index b401f4b..783d059 100644
  	}
  
  	if (pci_request_regions(pdev, ADF_C62X_DEVICE_NAME)) {
-diff --git a/quickassist/qat/drivers/crypto/qat/qat_c62xvf/adf_drv.c b/quickassist/qat/drivers/crypto/qat/qat_c62xvf/adf_drv.c
-index d3cf233..2c03cb4 100644
---- a/quickassist/qat/drivers/crypto/qat/qat_c62xvf/adf_drv.c
-+++ b/quickassist/qat/drivers/crypto/qat/qat_c62xvf/adf_drv.c
-@@ -163,17 +163,17 @@ static int adf_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
+Index: qat17/quickassist/qat/drivers/crypto/qat/qat_c62xvf/adf_drv.c
+===================================================================
+--- qat17.orig/quickassist/qat/drivers/crypto/qat/qat_c62xvf/adf_drv.c
++++ qat17/quickassist/qat/drivers/crypto/qat/qat_c62xvf/adf_drv.c
+@@ -155,17 +155,17 @@ static int adf_probe(struct pci_dev *pde
  	}
  
  	/* set dma identifier */
@@ -233,11 +233,11 @@ index d3cf233..2c03cb4 100644
  	}
  
  	if (pci_request_regions(pdev, ADF_C62XVF_DEVICE_NAME)) {
-diff --git a/quickassist/qat/drivers/crypto/qat/qat_d15xx/adf_drv.c b/quickassist/qat/drivers/crypto/qat/qat_d15xx/adf_drv.c
-index dbe26b1..9a1e4a2 100644
---- a/quickassist/qat/drivers/crypto/qat/qat_d15xx/adf_drv.c
-+++ b/quickassist/qat/drivers/crypto/qat/qat_d15xx/adf_drv.c
-@@ -176,17 +176,17 @@ static int adf_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
+Index: qat17/quickassist/qat/drivers/crypto/qat/qat_d15xx/adf_drv.c
+===================================================================
+--- qat17.orig/quickassist/qat/drivers/crypto/qat/qat_d15xx/adf_drv.c
++++ qat17/quickassist/qat/drivers/crypto/qat/qat_d15xx/adf_drv.c
+@@ -169,17 +169,17 @@ static int adf_probe(struct pci_dev *pde
  	}
  
  	/* set dma identifier */
@@ -259,11 +259,11 @@ index dbe26b1..9a1e4a2 100644
  	}
  
  	if (pci_request_regions(pdev, ADF_D15XX_DEVICE_NAME)) {
-diff --git a/quickassist/qat/drivers/crypto/qat/qat_d15xxvf/adf_drv.c b/quickassist/qat/drivers/crypto/qat/qat_d15xxvf/adf_drv.c
-index c47e9d9..859437f 100644
---- a/quickassist/qat/drivers/crypto/qat/qat_d15xxvf/adf_drv.c
-+++ b/quickassist/qat/drivers/crypto/qat/qat_d15xxvf/adf_drv.c
-@@ -158,17 +158,17 @@ static int adf_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
+Index: qat17/quickassist/qat/drivers/crypto/qat/qat_d15xxvf/adf_drv.c
+===================================================================
+--- qat17.orig/quickassist/qat/drivers/crypto/qat/qat_d15xxvf/adf_drv.c
++++ qat17/quickassist/qat/drivers/crypto/qat/qat_d15xxvf/adf_drv.c
+@@ -153,17 +153,17 @@ static int adf_probe(struct pci_dev *pde
  	}
  
  	/* set dma identifier */
@@ -285,11 +285,11 @@ index c47e9d9..859437f 100644
  	}
  
  	if (pci_request_regions(pdev, ADF_D15XXVF_DEVICE_NAME)) {
-diff --git a/quickassist/qat/drivers/crypto/qat/qat_dh895xcc/adf_drv.c b/quickassist/qat/drivers/crypto/qat/qat_dh895xcc/adf_drv.c
-index 22c0bbf..2f2e941 100644
---- a/quickassist/qat/drivers/crypto/qat/qat_dh895xcc/adf_drv.c
-+++ b/quickassist/qat/drivers/crypto/qat/qat_dh895xcc/adf_drv.c
-@@ -176,17 +176,17 @@ static int adf_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
+Index: qat17/quickassist/qat/drivers/crypto/qat/qat_dh895xcc/adf_drv.c
+===================================================================
+--- qat17.orig/quickassist/qat/drivers/crypto/qat/qat_dh895xcc/adf_drv.c
++++ qat17/quickassist/qat/drivers/crypto/qat/qat_dh895xcc/adf_drv.c
+@@ -169,17 +169,17 @@ static int adf_probe(struct pci_dev *pde
  	}
  
  	/* set dma identifier */
@@ -311,11 +311,11 @@ index 22c0bbf..2f2e941 100644
  	}
  
  	if (pci_request_regions(pdev, ADF_DH895XCC_DEVICE_NAME)) {
-diff --git a/quickassist/qat/drivers/crypto/qat/qat_dh895xccvf/adf_drv.c b/quickassist/qat/drivers/crypto/qat/qat_dh895xccvf/adf_drv.c
-index 92b7985..ae0f459 100644
---- a/quickassist/qat/drivers/crypto/qat/qat_dh895xccvf/adf_drv.c
-+++ b/quickassist/qat/drivers/crypto/qat/qat_dh895xccvf/adf_drv.c
-@@ -156,17 +156,17 @@ static int adf_probe(struct pci_dev *pdev, const struct pci_device_id *ent)
+Index: qat17/quickassist/qat/drivers/crypto/qat/qat_dh895xccvf/adf_drv.c
+===================================================================
+--- qat17.orig/quickassist/qat/drivers/crypto/qat/qat_dh895xccvf/adf_drv.c
++++ qat17/quickassist/qat/drivers/crypto/qat/qat_dh895xccvf/adf_drv.c
+@@ -151,17 +151,17 @@ static int adf_probe(struct pci_dev *pde
  	}
  
  	/* set dma identifier */
@@ -337,6 +337,3 @@ index 92b7985..ae0f459 100644
  	}
  
  	if (pci_request_regions(pdev, ADF_DH895XCCVF_DEVICE_NAME)) {
--- 
-2.34.1
-

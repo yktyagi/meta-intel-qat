@@ -13,11 +13,11 @@ Signed-off-by: Rahul Kumar Gupta <rahul.kumarxx.gupta@intel.com>
  quickassist/build_system/build_files/Core/ia.mk | 6 +++---
  1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/quickassist/build_system/build_files/Core/ia.mk b/quickassist/build_system/build_files/Core/ia.mk
-index 230ee0f..f6fc755 100644
---- a/quickassist/build_system/build_files/Core/ia.mk
-+++ b/quickassist/build_system/build_files/Core/ia.mk
-@@ -67,9 +67,9 @@
+Index: qat20/quickassist/build_system/build_files/Core/ia.mk
+===================================================================
+--- qat20.orig/quickassist/build_system/build_files/Core/ia.mk
++++ qat20/quickassist/build_system/build_files/Core/ia.mk
+@@ -41,9 +41,9 @@
  # e.g. setenv CROSS_COMPILE x86_64-linux
  ifdef CROSS_COMPILE
  ifdef MACHINE
@@ -30,6 +30,3 @@ index 230ee0f..f6fc755 100644
  else
  $(error MACHINE is undefined. Please set your target i.e. x86_64 \
  	"-> setenv MACHINE x86_64 or export MACHINE=x86_64")
--- 
-2.14.5
-

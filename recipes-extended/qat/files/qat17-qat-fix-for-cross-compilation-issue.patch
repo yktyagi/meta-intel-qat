@@ -18,12 +18,12 @@ Signed-off-by: Yongxin Liu <yongxin.liu@windriver.com>
  .../lookaside/access_layer/src/sample_code/performance/Makefile | 2 +-
  3 files changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/quickassist/lookaside/access_layer/src/sample_code/functional/common.mk b/quickassist/lookaside/access_layer/src/sample_code/functional/common.mk
-index c93dabb..d456527 100755
---- a/quickassist/lookaside/access_layer/src/sample_code/functional/common.mk
-+++ b/quickassist/lookaside/access_layer/src/sample_code/functional/common.mk
-@@ -143,7 +143,7 @@ ifeq ($(ICP_OS_LEVEL),user_space)
- ############################################################
+Index: qat17/quickassist/lookaside/access_layer/src/sample_code/functional/common.mk
+===================================================================
+--- qat17.orig/quickassist/lookaside/access_layer/src/sample_code/functional/common.mk
++++ qat17/quickassist/lookaside/access_layer/src/sample_code/functional/common.mk
+@@ -148,7 +148,7 @@ EXTRA_CFLAGS += -ggdb3 -O0 -fsanitize=ad
+ endif
  
  ifneq ($(PREBUILD_BINS),0)
 -    ADDITIONAL_OBJECTS += -L/usr/Lib -L$(ICP_BUILD_OUTPUT)
@@ -31,10 +31,10 @@ index c93dabb..d456527 100755
  
      ADDITIONAL_OBJECTS += $(ICP_BUILD_OUTPUT)/libqat_s.so
  
-diff --git a/quickassist/lookaside/access_layer/src/sample_code/functional/dc/dc_dp_sample/Makefile b/quickassist/lookaside/access_layer/src/sample_code/functional/dc/dc_dp_sample/Makefile
-index 8afa811..c82e02b 100644
---- a/quickassist/lookaside/access_layer/src/sample_code/functional/dc/dc_dp_sample/Makefile
-+++ b/quickassist/lookaside/access_layer/src/sample_code/functional/dc/dc_dp_sample/Makefile
+Index: qat17/quickassist/lookaside/access_layer/src/sample_code/functional/dc/dc_dp_sample/Makefile
+===================================================================
+--- qat17.orig/quickassist/lookaside/access_layer/src/sample_code/functional/dc/dc_dp_sample/Makefile
++++ qat17/quickassist/lookaside/access_layer/src/sample_code/functional/dc/dc_dp_sample/Makefile
 @@ -70,7 +70,7 @@ ifeq ($(ICP_OS_LEVEL),user_space)
  # Build user space executible
  #
@@ -44,11 +44,11 @@ index 8afa811..c82e02b 100644
  
  USER_SOURCE_FILES += ../../common/cpa_sample_utils.c cpa_dc_dp_sample.c
  USER_SOURCE_FILES += cpa_dc_dp_sample_user.c
-diff --git a/quickassist/lookaside/access_layer/src/sample_code/performance/Makefile b/quickassist/lookaside/access_layer/src/sample_code/performance/Makefile
-index 054bfe3..9d9fa7e 100644
---- a/quickassist/lookaside/access_layer/src/sample_code/performance/Makefile
-+++ b/quickassist/lookaside/access_layer/src/sample_code/performance/Makefile
-@@ -334,7 +334,7 @@ else
+Index: qat17/quickassist/lookaside/access_layer/src/sample_code/performance/Makefile
+===================================================================
+--- qat17.orig/quickassist/lookaside/access_layer/src/sample_code/performance/Makefile
++++ qat17/quickassist/lookaside/access_layer/src/sample_code/performance/Makefile
+@@ -344,7 +344,7 @@ else
       ADDITIONAL_OBJECTS += -lusdm -lqat
  endif
  
